@@ -1,0 +1,74 @@
+[System]
+Name='traffic'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=4
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='North'
+Range=[0 1]
+NumMFs=2
+MF1='low':'trimf',[-0.425 -0.00846 0.55708245243129]
+MF2='high':'trimf',[0.379 0.977801268498943 1.21]
+
+[Input2]
+Name='South'
+Range=[0 1]
+NumMFs=2
+MF1='low':'trimf',[-0.311 0.0116279069767442 0.522]
+MF2='high':'trimf',[0.338940803382664 0.984140803382664 1.17594080338266]
+
+[Input3]
+Name='East'
+Range=[0 1]
+NumMFs=2
+MF1='low':'trimf',[-0.398 0.019 0.506342494714588]
+MF2='high':'trimf',[0.341 0.912262156448203 1.18]
+
+[Input4]
+Name='West'
+Range=[0 1]
+NumMFs=2
+MF1='low':'trimf',[-0.328 0.0221987315010571 0.505]
+MF2='high':'trimf',[0.401 0.979915433403805 1.24]
+
+[Output1]
+Name='North'
+Range=[0 1]
+NumMFs=2
+MF1='green':'trimf',[-0.393410852713178 0.0232558139534884 0.439922480620155]
+MF2='red':'trimf',[0.379 0.950317124735729 1.21]
+
+[Output2]
+Name='South'
+Range=[0 1]
+NumMFs=2
+MF1='green':'trimf',[-0.317 0.00951374207188161 0.516]
+MF2='red':'trimf',[0.415433403805497 0.961 1.38]
+
+[Output3]
+Name='East'
+Range=[0 1]
+NumMFs=2
+MF1='green':'trimf',[-0.3279 0 0.5055]
+MF2='red':'trimf',[0.331 0.965116279069767 1.16]
+
+[Output4]
+Name='West'
+Range=[0 1]
+NumMFs=2
+MF1='green':'trimf',[-0.286 0.03276955602537 0.548]
+MF2='red':'trimf',[0.413319238900634 0.961 1.38]
+
+[Rules]
+2 1 1 1, 1 2 2 2 (1) : 1
+1 2 1 1, 2 1 2 2 (1) : 1
+1 1 2 1, 2 2 1 2 (1) : 1
+1 1 1 2, 2 2 2 1 (1) : 1

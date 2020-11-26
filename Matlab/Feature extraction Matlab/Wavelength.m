@@ -1,0 +1,12 @@
+a=imread('cameraman.tif');
+[LL LH HL HH]=dwt2(a,'haar');
+[LL2 LH2 HL2 HH2]=dwt2(LL,'haar');
+[LL3 LH3 HL3 HH3]=dwt2(LL2,'haar');
+[LL4 LH4 HL4 HH4]=dwt2(LL3,'haar');
+[LL5 LH5 HL5 HH5]=dwt2(LL4,'haar');
+[LL6 LH6 HL6 HH6]=dwt2(LL5,'haar');
+Dec4=[LL4 LH4 ;HL4 HH4];
+Dec3=[Dec4 LH3 ;HL3 HH3];
+Dec2=[Dec3 LH2 ;HL2 HH2];
+figure;Dec=[Dec2 LH;HL HH];
+imshow(Dec,[]);

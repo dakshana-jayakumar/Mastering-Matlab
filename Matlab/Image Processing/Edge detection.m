@@ -1,0 +1,10 @@
+a=imread('rose.png');
+b=rgb2gray(a);
+c=edge(b,'canny');
+d=edge(b,'sobel');
+e=edge(b,'prewitt');
+figure;
+subplot(2,2,1);imshow(a);
+subplot(2,2,2);imshow(c);title('canny');
+subplot(2,2,3);imshow(d);title('sobel');
+subplot(2,2,4);imshow(e);title('prewitt');
